@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Redux</title>
+    <script src="https://unpkg.com/redux@4.2.1/dist/redux.min.js"></script>
+</head>
+<body>
+    <h1>Stock Control</h1>
+    <h2>Nuevos artículos</h2>
+    <input type="text" id="sku" placeholder="sku">
+    <input type="text" id="name" placeholder="name">
+    <input type="text" id="stock" placeholder="stock">
+    <button id="addButton">Añadir</button>
+    <h2>Listado Stock</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>SKU</th>
+                <th>Nombre</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody id="stockList">
+        </tbody>
+    </table>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
