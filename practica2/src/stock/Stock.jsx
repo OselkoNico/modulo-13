@@ -1,6 +1,6 @@
 import { useState} from "react";
-import { useDispatch } from "react-redux";
-import { addItem } from "./stockSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { stockAsync, selectLoading } from "./stockSlice";
 
 export default function Stock(){
     const dispatch = useDispatch();
@@ -9,6 +9,7 @@ export default function Stock(){
         name: '',
         stock: ''
     }
+    const loading = useSelector(selectLoading);
     const [item, setItem] = useState(itemObject)
 
     const handleChange = (e) => {
@@ -20,7 +21,7 @@ export default function Stock(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(addItem(item));
+        dispatch(stockAsync(item));
         setItem(itemObject);
     }
 
@@ -32,7 +33,10 @@ export default function Stock(){
                 <input type="text" name="sku" value={item.sku} placeholder="sku" onChange={handleChange}/>
                 <input type="text" name="name" value={item.name} placeholder="name" onChange={handleChange}/>
                 <input type="number" name="stock" value={item.stock} placeholder="stock" onChange={handleChange}/>
-                <button type="submit">Añadir</button>
+                {loading ?
+                    <button disabled>Cargando...</button>
+                    :
+                    <button type="submit">Añadir</button>}
             </form>
         </>
     )
