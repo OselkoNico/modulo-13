@@ -1,0 +1,13 @@
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="addUser()">
+        <input type="text" placeholder="Nuevo usuario" formControlName="user">
+        <button type="submit">Añadir</button>
+    </form>
+    <div class="grid">
+        @for (user of users; track user) {
+            <div class="screen">
+                <p>{{ user }}</p>
+            </div>
+        }
+    </div>
+</div>
