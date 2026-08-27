@@ -1,13 +1,79 @@
-body {
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Lato', sans-serif;
+  color: #718096;
+}
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.container .flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  width: 440px;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 4px lightgray;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.buttons.row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  color: white;
+  background-color: #008489;
+  border: #008489 solid 1px;
+  cursor: pointer;
+  transition: background-color 400ms ease-in-out;
+}
+
+nav {
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.basket {
+  background-color: #008489;
+  padding: 0.25rem 1rem;
+  border-radius: 0.25rem;
+  color: white;
+  margin-right: 1rem;
+  position: relative;
+}
+
+.basket .counter {
+  background-color: crimson;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -10px;
+  right: -10px;
 }
