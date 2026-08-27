@@ -22,7 +22,7 @@ export class ChatRoom implements OnInit {
     })
   }
   addUser() {
-    this.userService.addUser(this.form.value.user);
+    this.userService.addUser(this.form.value);
     this.form.reset();
   }
 }
